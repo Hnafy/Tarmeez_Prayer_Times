@@ -1,8 +1,7 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](https://github.com/Hnafy/Tarmeez_Prayer_Times/blob/main/public/Prayer%20Times.jpeg?raw=true)
 
-Currently, two official plugins are available:
+# Netlify
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://hanafy-prayer-times.netlify.app/
