@@ -165,3 +165,55 @@
     animation: l3 1s infinite linear;
 }
 @keyframes l3 {to{transform: rotate(1turn)}}
+
+@media (max-width:1070px){
+    .card_content_remaining_select{
+        top: -30px;
+    }
+}
+@media (max-width:900px){
+    .container{
+        height: auto !important;
+        position: relative !important;
+        background-color: #07050b !important;
+    }
+    .card{
+        min-height: 1500px !important;
+        background-color: transparent !important;
+        backdrop-filter: blur(0) !important;
+    }
+    .card_content_remaining_select{
+        top: 36px;
+        transform: translate(-50%, 0) !important;
+    }
+    .card_content_adahn{
+        margin-top: 170px !important;
+        flex-direction: column;
+        color: #fff !important;
+    }
+    .card_content_adahn_card h2{
+        color: #fff;
+    }
+    .bg_img{
+        display: none !important;
+    }
+    .country{
+        transform: translate(-50%,73px)!important;
+    }
+    .card_content_remaining h2{
+        position: absolute;
+        bottom: 91px;
+        color: #fff;
+    }
+    .card_content_remaining p{
+        position: absolute;
+        bottom: 51px;
+        color: #fff;
+    }
+    .card_content_logo{
+        display: none;
+    }
+    .card-img{
+        display: none;
+    }
+}

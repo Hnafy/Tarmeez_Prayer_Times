@@ -120,7 +120,7 @@ export default function Card() {
                         ))}
                     </select>
                     <select
-                        className="card_content_remaining_select"
+                        className="card_content_remaining_select country"
                         onChange={(e) => setGovern(e.target.value)}
                         style={{ transform: "translate(-105%, -50%)" }}
                     >
