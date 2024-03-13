@@ -78,7 +78,7 @@ export default function Card() {
         const nextPrayerTimeMoment = moment(nextPrayerTime, "hh:mm");
         let remainingTime = moment(nextPrayerTime, "hh:mm").diff(momentNow);
         if (remainingTime < 0) {
-            const midnightDiff = moment("00:00:00", "hh:mm:ss").diff(momentNow);
+            const midnightDiff = moment("23:59:59", "hh:mm:ss").diff(momentNow);
             const fajrToMidnightDiff = nextPrayerTimeMoment.diff(
                 moment("00:00:00", "hh:mm:ss")
             );
@@ -86,7 +86,7 @@ export default function Card() {
             remainingTime = totalDiffernce;
         }
         const durationRemainingTime = moment.duration(remainingTime);
-        setRemainingTime(`${durationRemainingTime.hours()>12} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.seconds()}`);
+        setRemainingTime(`${durationRemainingTime.hours()} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.seconds()}`);
     };
     function handleHours(time){
         if(Number(String(time).substring(0, 2))>=12){
