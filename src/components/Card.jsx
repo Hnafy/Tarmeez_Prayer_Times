@@ -79,7 +79,7 @@ export default function Card() {
         const nextPrayerTimeMoment = moment(nextPrayerTime, "hh:mm");
         let remainingTime = moment(nextPrayerTime, "hh:mm").diff(momentNow);
         if (remainingTime < 0) {
-            const midnightDiff = moment("23:59:59", "hh:mm:ss").diff(momentNow);
+            const midnightDiff = moment("00:00:00", "hh:mm:ss").diff(momentNow);
             const fajrToMidnightDiff = nextPrayerTimeMoment.diff(
                 moment("00:00:00", "hh:mm:ss")
             );
@@ -112,7 +112,7 @@ export default function Card() {
                         }}
                         style={{ transform: "translate(5%, -50%)" }}
                     >
-                        <option value="EG">Choose City</option>
+                        <option value="EG">Choose Country</option>
                         {Object.keys(data).map((city, i) => (
                             <option key={i} value={city}>
                                 {cityNames[i]}
@@ -124,7 +124,7 @@ export default function Card() {
                         onChange={(e) => setGovern(e.target.value)}
                         style={{ transform: "translate(-105%, -50%)" }}
                     >
-                        <option value="cairo">Choose Country</option>
+                        <option value="cairo">Choose Governorate</option>
                         {data[`${city}`].map((govern, i) => (
                             <option key={i} value={govern}>
                                 {govern}
