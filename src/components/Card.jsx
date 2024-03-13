@@ -38,7 +38,6 @@ export default function Card() {
 
     useEffect(() => {
         let interval = setInterval(() => {
-            console.log("calling timer");
             setupCountdownTimer();
         }, 1000);
         return () => {
@@ -87,9 +86,17 @@ export default function Card() {
             remainingTime = totalDiffernce;
         }
         const durationRemainingTime = moment.duration(remainingTime);
-        setRemainingTime(`${durationRemainingTime.hours()} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.seconds()}`);
+        setRemainingTime(`${durationRemainingTime.hours()>12} : ${durationRemainingTime.minutes()} : ${durationRemainingTime.seconds()}`);
     };
-
+    function handleHours(time){
+        if(Number(String(time).substring(0, 2))>=12){
+            let first = +String(time).substring(0, 2) - 12
+            let second = +String(timings.Asr).substring(3)
+            return `${first} : ${second} PM`
+        }else{
+            return `${time} AM`
+        }
+    }
     return (
         <>
             <div className="card_content">
@@ -135,23 +142,23 @@ export default function Card() {
                 <div className="card_content_adahn">
                     <p className="adahn_name">{prayersArray[0].displayName}</p>
                     <div className="card_content_adahn_card" trr={prayersArray[0].displayName}>
-                        <h2>{timings.Fajr}</h2>
+                        <h2>{handleHours(timings.Fajr)}</h2>
                     </div>
                     <p className="adahn_name">{prayersArray[1].displayName}</p>
                     <div className="card_content_adahn_card" trr={prayersArray[1].displayName}>
-                        <h2>{timings.Dhuhr}</h2>
+                        <h2>{handleHours(timings.Dhuhr)}</h2>
                     </div>
                     <p className="adahn_name">{prayersArray[2].displayName}</p>
                     <div className="card_content_adahn_card" trr={prayersArray[2].displayName}>
-                        <h2>{timings.Asr}</h2>
+                        <h2>{handleHours(timings.Asr)}</h2>
                     </div>
                     <p className="adahn_name">{prayersArray[3].displayName}</p>
                     <div className="card_content_adahn_card" trr={prayersArray[3].displayName}>
-                        <h2>{timings.Maghrib}</h2>
+                        <h2>{handleHours(timings.Maghrib)}</h2>
                     </div>
                     <p className="adahn_name">{prayersArray[4].displayName}</p>
                     <div className="card_content_adahn_card" trr={prayersArray[4].displayName}>
-                        <h2>{timings.Isha}</h2>
+                        <h2>{handleHours(timings.Isha)}</h2>
                     </div>
                 </div>
                 <div className={loader ? "activeLoader" : "hideLoader"}>
