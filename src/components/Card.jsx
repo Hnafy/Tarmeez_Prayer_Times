@@ -133,20 +133,25 @@ export default function Card() {
                     </select>
                 </div>
                 <div className="card_content_adahn">
-                    <div className="card_content_adahn_card" trr={"عصر"}>
-                        <h2>{timings.Asr}</h2>
-                    </div>
-                    <div className="card_content_adahn_card" trr={"ظهر"}>
-                        <h2>{timings.Dhuhr}</h2>
-                    </div>
-                    <div className="card_content_adahn_card" trr={"فجر"}>
+                    <p className="adahn_name">{prayersArray[0].displayName}</p>
+                    <div className="card_content_adahn_card" trr={prayersArray[0].displayName}>
                         <h2>{timings.Fajr}</h2>
                     </div>
-                    <div className="card_content_adahn_card" trr={"عشاء"}>
-                        <h2>{timings.Isha}</h2>
+                    <p className="adahn_name">{prayersArray[1].displayName}</p>
+                    <div className="card_content_adahn_card" trr={prayersArray[1].displayName}>
+                        <h2>{timings.Dhuhr}</h2>
                     </div>
-                    <div className="card_content_adahn_card" trr={"مغرب"}>
+                    <p className="adahn_name">{prayersArray[2].displayName}</p>
+                    <div className="card_content_adahn_card" trr={prayersArray[2].displayName}>
+                        <h2>{timings.Asr}</h2>
+                    </div>
+                    <p className="adahn_name">{prayersArray[3].displayName}</p>
+                    <div className="card_content_adahn_card" trr={prayersArray[3].displayName}>
                         <h2>{timings.Maghrib}</h2>
+                    </div>
+                    <p className="adahn_name">{prayersArray[4].displayName}</p>
+                    <div className="card_content_adahn_card" trr={prayersArray[4].displayName}>
+                        <h2>{timings.Isha}</h2>
                     </div>
                 </div>
                 <div className={loader ? "activeLoader" : "hideLoader"}>

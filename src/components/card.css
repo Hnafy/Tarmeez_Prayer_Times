@@ -44,9 +44,10 @@
     max-width: 819px;
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     gap: 50px 60px;
     align-items: center;
-    flex-wrap: wrap;
     left: 50%;
     position: absolute;
     transform: translate(-50%, 0);
@@ -171,6 +172,9 @@
         top: -30px;
     }
 }
+.adahn_name{
+    display: none;
+}
 @media (max-width:900px){
     .container{
         height: auto !important;
@@ -178,13 +182,18 @@
         background-color: #07050b !important;
     }
     .card{
-        min-height: 1500px !important;
+        min-height: 1800px !important;
         background-color: transparent !important;
         backdrop-filter: blur(0) !important;
     }
     .card_content_remaining_select{
         top: 36px;
         transform: translate(-50%, 0) !important;
+    }
+    .adahn_name{
+        display: block;
+        font-weight: 400;
+        font-size: 35px;
     }
     .card_content_adahn{
         margin-top: 170px !important;
