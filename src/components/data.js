@@ -22,26 +22,26 @@ export default {} = {
     "YE": ["Ad Dali'", "Aden", "Al Bayda'", "Al Ghaydah", "Al Hudaydah", "Al Mukalla", "Al Shihr", "Ataq", "Dhamar", "Hodeidah", "Ibb", "Lahij", "Marib", "Sa'dah", "Sadar", "Sana'a", "Say'un", "Taiz", "Yarim", "Zabid", "Zinjibar"]
 }
 
-export let cityNames = [
-    "United Arab Emirates",
-    "Bahrain",
-    "Djibouti",
-    "Egypt",
-    "Iraq",
-    "Jordan",
-    "Comoros",
-    "Kuwait",
-    "Lebanon",
-    "Libya",
-    "Mauritania",
-    "Morocco",
-    "Oman",
-    "Palestine",
-    "Qatar",
-    "Saudi Arabia",
-    "Somalia",
-    "Sudan",
-    "Syria",
-    "Tunisia",
-    "Yemen"
-];
+export let cityNames = {
+    "AE": "United Arab Emirates",
+    "BH": "Bahrain",
+    "DJ": "Djibouti",
+    "EG": "Egypt",
+    "IQ": "Iraq",
+    "JO": "Jordan",
+    "KM": "Comoros",
+    "KW": "Kuwait",
+    "LB": "Lebanon",
+    "LY": "Libya",
+    "MR": "Mauritania",
+    "MA": "Morocco",
+    "OM": "Oman",
+    "PS": "Palestine",
+    "QA": "Qatar",
+    "SA": "Saudi Arabia",
+    "SO": "Somalia",
+    "SD": "Sudan",
+    "SY": "Syria",
+    "TN": "Tunisia",
+    "YE": "Yemen"
+};

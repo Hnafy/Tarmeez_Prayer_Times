@@ -9,10 +9,12 @@ import data from "./data";
 import {cityNames} from "./data"
 import moment from "moment";
 
+const localCity =JSON.parse(window.localStorage.getItem("City"))
+const localGovern =JSON.parse(window.localStorage.getItem("Govern"))
 export default function Card() {
     let [timings, setTimings] = useState({});
-    let [govern, setGovern] = useState("Cairo");
-    let [city, setCity] = useState("EG");
+    let [city, setCity] = useState((localCity!==null)?localCity:"EG");
+    let [govern, setGovern] = useState((localGovern!==null)?localGovern:"Cairo");
     let [loader, setLoader] = useState(false);
     let [nextPrayerIndex, setNextPrayerIndex] = useState(1);
     const prayersArray = [
@@ -34,6 +36,8 @@ export default function Card() {
             setLoader(false);
         }
         getData();
+        window.localStorage.setItem("City",JSON.stringify(city))
+        window.localStorage.setItem("Govern",JSON.stringify(govern))
     }, [city, govern]);
 
     useEffect(() => {
@@ -119,10 +123,10 @@ export default function Card() {
                         }}
                         style={{ transform: "translate(5%, -50%)" }}
                     >
-                        <option value="EG">Choose Country</option>
+                        <option className="cityOption" value={(localCity===null)?"EG":cityNames[`${localCity}`]}>{(localCity===null)?"Choose Country":cityNames[`${localCity}`]}</option>
                         {Object.keys(data).map((city, i) => (
                             <option key={i} value={city}>
-                                {cityNames[i]}
+                                {cityNames[`${city}`]}
                             </option>
                         ))}
                     </select>
@@ -131,8 +135,8 @@ export default function Card() {
                         onChange={(e) => setGovern(e.target.value)}
                         style={{ transform: "translate(-105%, -50%)" }}
                     >
-                        <option value="cairo">Choose Governorate</option>
-                        {data[`${city}`].map((govern, i) => (
+                        <option className="governOption" value={(localCity===null)?"Cairo":govern}>{(localCity===null)?"Choose Governorate":govern}</option>
+                        {data[`${city}`] && data[`${city}`].map((govern, i) => (
                             <option key={i} value={govern}>
                                 {govern}
                             </option>

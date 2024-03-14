@@ -33,6 +33,12 @@
     color: inherit;
     background-color: var(--primary);
 }
+.cityOption:first-child{
+    display: none;
+}
+.governOption:first-child{
+    display: none;
+}
 .card_content_remaining_select:focus {
     outline: none;
 }
