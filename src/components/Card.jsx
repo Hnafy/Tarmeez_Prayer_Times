@@ -95,7 +95,7 @@ export default function Card() {
     function handleHours(time){
         if(Number(String(time).substring(0, 2))>=12){
             let first = +String(time).substring(0, 2) - 12
-            let second = +String(timings.Asr).substring(3)
+            let second = +String(timings.time).substring(3)
             return `${first} : ${second} PM`
         }else{
             return `${time} AM`
